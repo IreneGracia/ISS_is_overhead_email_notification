@@ -1,0 +1,4 @@
+
+This project enables users to receive automatic email notifications when the International Space Station (ISS) is within 5 degrees of their provided coordinates (e.g., their home address). Through a Tkinter GUI, users can input their location and email address. The system validates the inputs and stores them securely in a Registrations.py file, which is excluded from version control using .gitignore.
+
+The check_iss_and_notify() function is set up to be executed every 10 seconds. It calls the ISS location API (http://api.open-notify.org/iss-now.json) to retrieve the ISS's current latitude and longitude, and checks whether it is within 5 degrees of the user's coordinates. If so, an email notification is generated using the smtplib and email modules to send an alert via Gmail. To avoid spamming, only one notification is sent per user each time the ISS passes within the specified range.
